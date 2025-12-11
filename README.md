@@ -1,16 +1,27 @@
+# Hono + Preact on Cloudflare
+
+This repository is an original boilerplate for "12 web apps in 12 months".
+
+- Hono + Preact with SSR, hydration and routing
+- TailwindCSS
+- Vite
+- Cloudflare Worker for cloud and D1 for database
+
+## Commands
+
 ```txt
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 ```txt
-npm run deploy
+pnpm run deploy
 ```
 
 [For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
 
 ```txt
-npm run cf-typegen
+pnpm run cf-typegen
 ```
 
 Pass the `CloudflareBindings` as generics when instantiation `Hono`:
