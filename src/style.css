@@ -1,19 +1,27 @@
 @import 'tailwindcss';
 
+/* https://tailwindcss.com/docs/preflight */
 @layer base {
   h1 {
-    @apply text-4xl font-bold mb-4;
+    font-size: var(--text-2xl);
+    @apply font-bold mb-4;
   }
   h2 {
-    @apply text-3xl font-semibold mb-3;
+    font-size: var(--text-xl);
+    @apply font-semibold mb-3;
   }
   h3 {
-    @apply text-2xl font-semibold mb-2;
+    font-size: var(--text-lg);
+    @apply font-semibold mb-2;
   }
   p {
     @apply mb-4 leading-relaxed;
   }
   ul {
     @apply list-disc list-inside mb-4;
+  }
+  a {
+    color: var(--color-blue-600);
+    text-decoration-line: underline;
   }
 }
