@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'preact/hooks'
 import Header from './components/Header'
 
-const Home = (props: any) => {
+const Home = () => {
   const [message, setMessage] = useState('')
   const [count, setCount] = useState(0)
 
@@ -17,7 +17,9 @@ const Home = (props: any) => {
   return (
     <div>
       <Header />
-      <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+      <button onClick={() => setCount((count) => count + 1)}>
+        count is {count}
+      </button>
       <h2>Message from API</h2>
       <p>{message}</p>
     </div>

@@ -1,6 +1,6 @@
 import Header from './components/Header'
 
-const About = (props: any) => {
+const About = () => {
   return (
     <div>
       <Header />

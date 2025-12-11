@@ -9,7 +9,7 @@ type Env = {
   ASSETS: Fetcher
 }
 
-export type SSRElement = ({ path }: { path?: string }) => JSX.Element
+export type SSRElement = () => JSX.Element
 
 type HTMLReplacer = (html: string, content: string) => string
 type SSROptions = {
@@ -25,12 +25,12 @@ export const ssr = (
   return async (c, next) => {
     const path = new URL(c.req.url).pathname
     locationStub(path)
-    let content = await prerender(<App path={path} />)
+    let content = await prerender(<App />)
     let statusCode: StatusCode = 200
 
     if (content.html === '') {
       if (options?.notFound) {
-        content = await prerender(options.notFound({ path }))
+        content = await prerender(options.notFound())
         statusCode = 404
       } else {
         return await next()
@@ -51,8 +51,7 @@ export const ssr = (
         )
     }
 
-    let html = replacer(view, content.html)
-
+    const html = replacer(view, content.html)
     return c.html(html, statusCode)
   }
 }

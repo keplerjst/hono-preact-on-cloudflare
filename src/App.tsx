@@ -2,7 +2,7 @@ import { ErrorBoundary, LocationProvider, Router } from 'preact-iso'
 import About from './app/About'
 import Home from './app/Home'
 
-const App = ({ path }: { path?: string }) => {
+const App = () => {
   return (
     <LocationProvider>
       <ErrorBoundary>

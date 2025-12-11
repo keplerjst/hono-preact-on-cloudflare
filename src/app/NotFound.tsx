@@ -1,6 +1,6 @@
 import Header from './components/Header'
 
-const NotFound = (props: any) => {
+const NotFound = () => {
   return (
     <div>
       <Header />
