@@ -15,13 +15,20 @@ const Home = () => {
   }, [])
 
   return (
-    <div>
+    <div className="max-w-3xl mx-auto my-8 text-center">
       <Header />
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
-      <h2>Message from API</h2>
-      <p>{message}</p>
+      <div className="my-4">
+        <button
+          className="py-1 px-2 bg-gray-700 text-white"
+          onClick={() => setCount((count) => count + 1)}
+        >
+          count is {count}
+        </button>
+      </div>
+      <div className="my-4">
+        <h2 className="text-xl">Message from API</h2>
+        <p>{message}</p>
+      </div>
     </div>
   )
 }

@@ -23,6 +23,7 @@ export const ssr = (
   options?: Partial<SSROptions>
 ): MiddlewareHandler<{ Bindings: Env }> => {
   return async (c, next) => {
+    console.log('ssr!')
     const path = new URL(c.req.url).pathname
     locationStub(path)
     let content = await prerender(<App />)
@@ -39,6 +40,8 @@ export const ssr = (
 
     const indexPath = options?.indexPath || '/index.html'
     const assetUrl = new URL(indexPath, c.req.url)
+    console.log('assetUrl: ', assetUrl.toString())
+    console.log('c.env.ASSETS: ', c.env.ASSETS)
     const res = await c.env.ASSETS.fetch(assetUrl.toString())
     const view = await res.text()
     let replacer = options?.replacer
