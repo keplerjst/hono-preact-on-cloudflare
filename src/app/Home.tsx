@@ -1,3 +1,5 @@
+import { hc } from 'hono/client'
+import type { ApiType } from '../api'
 import { useEffect, useState } from 'preact/hooks'
 import Header from './components/Header'
 
@@ -7,7 +9,8 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('/api')
+      const api = hc<ApiType>('/api')
+      const res = await api.hello.$get()
       const data = await res.json()
       setMessage(data.message)
     }
