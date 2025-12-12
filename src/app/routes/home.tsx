@@ -29,16 +29,56 @@ export const Component = ({ count: initialCount }: LoaderData) => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto my-8 text-center">
+    <div className="min-h-screen bg-gray-50">
       <Header />
-      <div className="my-4">
-        <button
-          className="py-1 px-2 bg-gray-700 text-white"
-          onClick={handleClick}
-        >
-          count is {count}
-        </button>
-      </div>
+
+      {/* Hero Section */}
+      <main className="max-w-4xl mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Hinoco
+          </h1>
+          <p className="text-xl text-gray-600 mb-2">
+            Hono + Preact on Cloudflare
+          </p>
+          <p className="text-gray-500">
+            A modern full-stack template with SSR, D1 database, and Drizzle ORM
+          </p>
+        </div>
+
+        {/* Tech Stack */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          {['Hono', 'Preact', 'Cloudflare Workers', 'D1 + Drizzle'].map(
+            (tech) => (
+              <div
+                key={tech}
+                className="bg-white rounded-lg p-4 text-center shadow-sm border border-gray-100"
+              >
+                <span className="text-sm font-medium text-gray-700">
+                  {tech}
+                </span>
+              </div>
+            )
+          )}
+        </div>
+
+        {/* Counter Demo */}
+        <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 text-center">
+          <h2 className="text-lg font-semibold text-gray-900 mb-2">
+            Interactive Counter
+          </h2>
+          <p className="text-gray-500 text-sm mb-6">
+            Click the button to increment. Data is stored in D1 database.
+          </p>
+          <button
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 active:bg-gray-950 transition-colors shadow-sm"
+            onClick={handleClick}
+          >
+            <span>Count:</span>
+            <span className="bg-white/20 px-2 py-0.5 rounded">{count}</span>
+          </button>
+        </div>
+      </main>
     </div>
   )
 }
