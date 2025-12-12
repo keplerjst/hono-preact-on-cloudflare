@@ -29,7 +29,7 @@ jobs:
         run: pnpm build
 
       - name: Run D1 migrations
-        run: pnpm wrangler d1 migrations apply hono-preact-on-cloudflare-db --remote
+        run: pnpm wrangler d1 migrations apply hinoco-db --remote
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

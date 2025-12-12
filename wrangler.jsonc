@@ -1,20 +1,23 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "hono-preact-on-cloudflare",
-  "compatibility_date": "2025-08-03",
-  "main": "src/server.ts",
-  "assets": {
-    "directory": "./dist",
-    "binding": "ASSETS",
-    "run_worker_first": ["/", "/api/*"],
-    "not_found_handling": "404-page"
-  },
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "hono-preact-on-cloudflare-db",
-      "database_id": "9aaf7222-da79-4967-915e-d7080b66edac",
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "hinoco",
+	"compatibility_date": "2025-08-03",
+	"main": "src/server.ts",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		"run_worker_first": [
+			"/",
+			"/api/*"
+		],
+		"not_found_handling": "404-page"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "hinoco-db",
+			"database_id": "1d8601ff-e37c-49d8-9606-2268583cb391",
       "migrations_dir": "drizzle"
-    }
-  ]
+		}
+	]
 }
