@@ -20,10 +20,8 @@ export type LoaderData = Awaited<ReturnType<typeof loader>>
 // Component: ページコンポーネント
 export const Component = ({ count: initialCount }: LoaderData) => {
   const [count, setCount] = useState(initialCount)
-  console.log('count: ', count)
 
   const handleClick = async () => {
-    alert('handleClick')
     const api = hc<ApiType>('/api')
     const res = await api.count.$post()
     const data = await res.json()
