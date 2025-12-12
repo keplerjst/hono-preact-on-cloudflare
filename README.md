@@ -5,7 +5,8 @@ This repository is an original boilerplate for "12 web apps in 12 months".
 - Hono + Preact with SSR, hydration and routing
 - TailwindCSS
 - Vite
-- Cloudflare Worker for cloud and D1 for database
+- Cloudflare Worker 
+- Cloudflare D1 for Database
 
 ## Commands
 
