@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Build
+        run: pnpm build
+
       - name: Run D1 migrations
         run: pnpm wrangler d1 migrations apply hono-preact-on-cloudflare-db --remote
         env:
