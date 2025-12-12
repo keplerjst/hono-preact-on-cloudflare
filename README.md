@@ -39,15 +39,16 @@ const app = new Hono<{ Bindings: Bindings }>()
 
 ```bash
 # This writes `d1_databases` section in wrangler.jsonc
-❯ npx wrangler@latest d1 create your-db
-✅ Successfully created DB your-db in region XXX
+# Rename hono-preact-on-cloudflare-db to whatever you like
+❯ npx wrangler@latest d1 create hono-preact-on-cloudflare-db
+✅ Successfully created DB hono-preact-on-cloudflare-db in region XXX
 Created your new D1 database.
 
 {
   "d1_databases": [
     {
-      "binding": "your-db", # Rename this whatever you like such as "DB"
-      "database_name": "your-db",
+      "binding": "DB", # Rename this whatever you like
+      "database_name": "hono-preact-on-cloudflare-db",
       "database_id": "<unique-ID-for-your-database>"
     }
   ]
@@ -65,7 +66,21 @@ Reading config file '/Users/nozoe/dev/hono-preact-on-cloudflare/drizzle.config.t
 1 tables
 counts 2 columns 0 indexes 0 fks
 
-[✓] Your SQL migration file ➜ drizzle/0000_absurd_shockwave.sql 🚀
+[✓] Your SQL migration file ➜ drizzle/0000_xxx.sql 🚀
+```
+
+```bash
+❯ npx wrangler d1 execute hono-preact-on-cloudflare-db --local --file=./drizzle/0000_xxx.sql
+
+ ⛅️ wrangler 4.53.0 (update available 4.54.0)
+─────────────────────────────────────────────
+Resource location: local
+
+Use --remote if you want to access the remote instance.
+
+🌀 Executing on local database hono-preact-on-cloudflare-db (9aaf7222-da79-4967-915e-d7080b66edac) from .wrangler/state/v3/d1:
+🌀 To execute on your remote database, add a --remote flag to your wrangler command.
+🚣 1 command executed successfully.
 ```
 
 ### References
