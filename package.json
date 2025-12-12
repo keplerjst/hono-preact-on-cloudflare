@@ -1,5 +1,5 @@
 {
-  "name": "hono-preact-on-cloudflare",
+  "name": "hinoco",
   "type": "module",
   "scripts": {
     "dev": "vite",
