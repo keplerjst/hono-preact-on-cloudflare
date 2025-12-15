@@ -14,6 +14,31 @@ An opinionated full-stack template for building modern web apps on Cloudflare.
 - Cloudflare D1 + Drizzle ORM
 - Dark mode support
 
+## Project Structure
+
+```
+src/
+├── server.ts          # Hono server entry point
+├── client.tsx         # Client-side hydration entry point
+├── App.tsx            # Root Preact component
+├── routes.ts          # Route definitions
+├── style.css          # Global styles (Tailwind)
+├── api/
+│   └── index.ts       # API routes (/api/*)
+├── app/
+│   ├── routes/        # Page components with loaders
+│   │   ├── home.tsx
+│   │   └── about.tsx
+│   ├── components/    # Shared components
+│   │   ├── Header.tsx
+│   │   └── ThemeProvider.tsx
+│   └── NotFound.tsx   # 404 page
+├── db/
+│   └── schema.ts      # Drizzle schema
+└── lib/
+    └── ssr.tsx        # SSR middleware
+```
+
 ## Prerequisites
 
 - Node.js v18+
