@@ -2,6 +2,12 @@
 
 An opinionated full-stack template for building modern web apps on Cloudflare.
 
+## Why
+
+Building a full-stack app with Hono and Preact? You'll quickly find that SSR, hydration, and routing aren't straightforward—and resources are scarce.
+
+Hinoco solves this. It's a ready-to-deploy template that handles the infrastructure, so you can focus on your product.
+
 [Demo](https://hinoco.keplerjst.workers.dev/)
 
 ## Features
