@@ -2,6 +2,8 @@
 
 An opinionated full-stack template for building modern web apps on Cloudflare.
 
+[Demo](https://hinoco.keplerjst.workers.dev/)
+
 ## Features
 
 - SSR, Hydration, Routing and Data Loader
@@ -11,10 +13,6 @@ An opinionated full-stack template for building modern web apps on Cloudflare.
 - Cloudflare Workers
 - Cloudflare D1 + Drizzle ORM
 - Dark mode support
-
-## Demo
-
-https://hinoco.keplerjst.workers.dev/
 
 ## Prerequisites
 
@@ -72,6 +70,11 @@ Add the following secrets to your repository (Settings → Secrets and variables
 
 - `CLOUDFLARE_API_TOKEN` - Create at [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens)
 - `CLOUDFLARE_ACCOUNT_ID` - Found in your Cloudflare dashboard URL
+
+Following permissions are required for the API token:
+
+- Account > D1: Edit
+- Account > Workers Scripts: Edit
 
 ### Manual deployment (optional)
 
